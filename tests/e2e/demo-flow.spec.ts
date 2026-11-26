@@ -118,7 +118,7 @@ test("검증기관: 4건 중 1건 인정·1건 보류로 판정하고 블록체�
   await expect(page.getByText("검증 결과를 블록체인에 등록했습니다")).toBeVisible();
 });
 
-test("광고주: 검증된 실적을 최종 승인하고, 홈 진행판의 6단계가 모두 완료된다", async ({ page }) => {
+test("광고주: 검증된 실적을 최종 승인하고, 홈에 노출·정산 결과와 6단계 완료가 표시된다", async ({ page }) => {
   await page.goto("/advertiser");
   await page.getByTestId("approve").click();
   await expect(page.getByTestId("finalized")).toContainText("1건 최종 확정");
@@ -126,6 +126,10 @@ test("광고주: 검증된 실적을 최종 승인하고, 홈 진행판의 6단�
   await page.goto("/");
   await expect(page.getByTestId("steps").locator('[data-status="done"]')).toHaveCount(6);
   await expect(page.getByTestId("next-action")).toContainText("모든 단계");
+  await expect(page.getByTestId("home-funnel-received")).toHaveText(/^4s*건/);
+  await expect(page.getByTestId("home-funnel-presented")).toHaveText(/^1s*건/);
+  await expect(page.getByTestId("settle-verified")).toHaveText(/^1s*건/);
+  await expect(page.getByTestId("timeline").locator("li")).toHaveCount(5);
 });
 
 test("블록체인 기록: 5건의 승인 이력, 컨트랙트 권한 거부, 재현 확인", async ({ page }) => {

@@ -48,16 +48,16 @@ export function Funnel({ counts, compact }: { counts: StageCounts; compact?: boo
                 s.billing ? "border-emerald-300 bg-emerald-50" : "border-stone-200 bg-white",
               )}
             >
-              <p className="flex items-center gap-1.5 text-[12.5px] font-semibold text-stone-600">
+              <p className="flex items-center gap-1.5 text-[14.5px] font-semibold text-stone-600">
                 <Icon size={15} className={s.billing ? "text-emerald-700" : "text-stone-400"} />
                 {s.label}
-                {s.billing && !compact && <span className="rounded bg-emerald-700 px-1.5 py-px text-[10.5px] text-white">정산 기준</span>}
+                {s.billing && !compact && <span className="rounded bg-emerald-700 px-1.5 py-px text-[13px] text-white">정산 기준</span>}
               </p>
-              <p className={cx("tabular mt-1 font-extrabold leading-none text-stone-900", compact ? "text-[26px]" : "text-[34px]")} data-testid={`funnel-${i}`}>
+              <p className={cx("tabular mt-1 font-extrabold leading-none text-stone-900", compact ? "text-[28px]" : "text-[36px]")} data-testid={`funnel-${i}`}>
                 {s.value}
-                <span className="ml-1 text-[14px] font-semibold text-stone-400">건</span>
+                <span className="ml-1 text-[16px] font-semibold text-stone-400">건</span>
               </p>
-              {!compact && <p className="mt-1 text-[11.5px] text-stone-400">{s.sub}</p>}
+              {!compact && <p className="mt-1 text-[13.5px] text-stone-400">{s.sub}</p>}
             </div>
             {i < stages.length - 1 && <ArrowRight size={18} className="shrink-0 text-stone-300" />}
           </div>
@@ -107,7 +107,7 @@ export function SettlementResult({ result }: { result: VerificationResult }) {
         ))}
         {unsupported > 0 && <div className="bg-rose-200" style={{ width: `${(unsupported / total) * 100}%` }} />}
       </div>
-      <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-[13px]" data-testid="gap-summary">
+      <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-[15px]" data-testid="gap-summary">
         {segments.map((s) => (
           <li key={s.key} className="flex items-center gap-1.5 text-stone-600">
             <span className={cx("size-2.5 rounded-sm", s.color)} />
@@ -121,7 +121,7 @@ export function SettlementResult({ result }: { result: VerificationResult }) {
           </li>
         )}
       </ul>
-      <p className="mt-3 text-[12.5px] text-stone-500">
+      <p className="mt-3 text-[14.5px] text-stone-500">
         매체의 숫자가 거짓이라는 뜻이 아니라, 매체는 ‘광고를 받은 횟수’를 세고 계약은 ‘소비자 화면에 표시된 횟수’를 인정하기 때문에 생기는 차이입니다.
       </p>
     </div>
@@ -131,18 +131,18 @@ export function SettlementResult({ result }: { result: VerificationResult }) {
 function Big({ label, value, hint, tone, testId }: { label: string; value: number; hint: string; tone?: "good" | "warn"; testId?: string }) {
   return (
     <div>
-      <p className="text-[12.5px] font-medium text-stone-500">{label}</p>
+      <p className="text-[14.5px] font-medium text-stone-500">{label}</p>
       <p
         data-testid={testId}
         className={cx(
-          "tabular text-[44px] font-extrabold leading-none tracking-tight",
+          "tabular text-[46px] font-extrabold leading-none tracking-tight",
           tone === "good" ? "text-emerald-700" : tone === "warn" ? "text-amber-600" : "text-stone-900",
         )}
       >
         {value}
-        <span className="ml-1 text-[18px] font-bold text-stone-400">건</span>
+        <span className="ml-1 text-[20px] font-bold text-stone-400">건</span>
       </p>
-      <p className="mt-1 text-[11.5px] text-stone-400">{hint}</p>
+      <p className="mt-1 text-[13.5px] text-stone-400">{hint}</p>
     </div>
   );
 }

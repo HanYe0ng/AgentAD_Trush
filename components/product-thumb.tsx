@@ -19,7 +19,7 @@ export function ProductThumb({ category, brand, size = "md" }: { category: strin
     <div className={cx("relative grid shrink-0 place-items-center", box, tone)} aria-hidden>
       <Icon size={icon} strokeWidth={1.5} />
       {size !== "sm" && (
-        <span className="absolute bottom-2 left-0 right-0 truncate px-2 text-center text-[10.5px] font-semibold uppercase tracking-wide opacity-70">
+        <span className="absolute bottom-2 left-0 right-0 truncate px-2 text-center text-[13px] font-semibold uppercase tracking-wide opacity-70">
           {brand}
         </span>
       )}

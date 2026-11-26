@@ -23,7 +23,7 @@ export function Logo() {
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-[calc(100vh/var(--app-zoom))] flex-col">
       <TopBar />
       <div className="flex flex-1">
         <Sidebar />
@@ -39,16 +39,16 @@ function TopBar() {
     <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-stone-200 bg-white px-6">
       <Link href="/" className="flex items-center gap-2.5">
         <Logo />
-        <span className="text-[19px] font-extrabold tracking-tight text-stone-900">AgentAd Trust</span>
+        <span className="text-[22px] font-extrabold tracking-tight text-stone-900">AgentAd Trust</span>
       </Link>
       <div className="ml-auto flex items-center gap-3">
         {campaigns && campaigns.length > 0 && (
-          <label className="flex items-center gap-2 text-[12.5px] text-stone-500">
+          <label className="flex items-center gap-2 text-[14.5px] text-stone-500">
             현재 캠페인
             <select
               value={currentId ?? ""}
               onChange={(e) => select(e.target.value)}
-              className="h-9 max-w-64 rounded-lg border border-stone-300 bg-white px-2 text-[13px] font-medium text-stone-800"
+              className="h-10 max-w-72 rounded-lg border border-stone-300 bg-white px-2 text-[15px] font-medium text-stone-800"
               aria-label="현재 캠페인"
               data-testid="campaign-select"
             >
@@ -69,7 +69,7 @@ function TopBar() {
 function ChainStatus() {
   const { config, loading, mode, setMode, metamaskAddress, connect, roleOf, refresh } = useChain();
   const [error, setError] = useState<string | null>(null);
-  if (loading && !config) return <span className="text-[12px] text-stone-400">체인 확인 중…</span>;
+  if (loading && !config) return <span className="text-[14px] text-stone-400">체인 확인 중…</span>;
   const healthy = !!config?.deployed;
   const network = config?.chainId === 11155111 ? "Sepolia 테스트넷" : config?.chainId === 31337 ? "로컬 블록체인" : config?.network;
 
@@ -81,7 +81,7 @@ function ChainStatus() {
         title={config?.message ?? `컨트랙트 ${config?.registryAddress ?? ""}`}
         data-testid="chain-status"
         className={cx(
-          "flex h-9 items-center gap-2 rounded-lg px-3 text-[12.5px] font-semibold",
+          "flex h-10 items-center gap-2 rounded-lg px-3.5 text-[14.5px] font-semibold",
           healthy ? "bg-emerald-50 text-emerald-800" : "bg-rose-50 text-rose-700",
         )}
       >
@@ -89,13 +89,13 @@ function ChainStatus() {
         {healthy ? network : "블록체인 연결 필요"}
       </button>
       {config?.devSignerAvailable && (
-        <div className="flex h-9 items-center rounded-lg bg-stone-100 p-1 text-[12px]" title="트랜잭션에 서명할 방식">
+        <div className="flex h-10 items-center rounded-lg bg-stone-100 p-1 text-[14px]" title="트랜잭션에 서명할 방식">
           {(["dev", "metamask"] as const).map((m) => (
             <button
               key={m}
               type="button"
               onClick={() => setMode(m)}
-              className={cx("h-7 rounded-md px-2.5 font-semibold", mode === m ? "bg-white text-stone-900 shadow-sm" : "text-stone-500")}
+              className={cx("h-8 rounded-md px-3 font-semibold", mode === m ? "bg-white text-stone-900 shadow-sm" : "text-stone-500")}
             >
               {m === "dev" ? "시연 지갑" : "MetaMask"}
             </button>
@@ -114,7 +114,7 @@ function ChainStatus() {
               setError(describeChainError(err).detail);
             }
           }}
-          className="flex h-9 items-center gap-1.5 rounded-lg bg-emerald-800 px-3 text-[12.5px] font-semibold text-white hover:bg-emerald-700"
+          className="flex h-10 items-center gap-1.5 rounded-lg bg-emerald-800 px-3.5 text-[14.5px] font-semibold text-white hover:bg-emerald-700"
         >
           <Wallet size={15} />
           {metamaskAddress ? `${shortHash(metamaskAddress, 4)} · ${roleOf(metamaskAddress) ? ROLE_LABEL[roleOf(metamaskAddress)!] : "역할 없음"}` : "지갑 연결"}
@@ -128,14 +128,14 @@ function Sidebar() {
   const pathname = usePathname();
   const { config, mode } = useChain();
   return (
-    <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-60 shrink-0 flex-col border-r border-stone-200 bg-[#f1f3f0] px-3 py-5 md:flex">
+    <aside className="sticky top-16 hidden h-[calc(100vh/var(--app-zoom)_-_4rem)] w-64 shrink-0 flex-col border-r border-stone-200 bg-[#f1f3f0] px-3 py-5 md:flex">
       <nav className="space-y-1">
         {PAGES.map((p) => (
           <NavItem key={p.key} page={p} active={p.href === "/" ? pathname === "/" : pathname?.startsWith(p.href) ?? false} />
         ))}
       </nav>
       {config?.roles && (
-        <div className="mt-auto rounded-xl bg-white/70 p-3 text-[11.5px] text-stone-500">
+        <div className="mt-auto rounded-xl bg-white/70 p-3 text-[13.5px] text-stone-500">
           <p className="mb-1.5 font-semibold text-stone-600">{mode === "dev" ? "시연 지갑 (로컬 테스트 계정)" : "역할별 지갑"}</p>
           {(Object.entries(config.roles) as [Role, string][]).map(([role, address]) => (
             <p key={role} className="flex justify-between gap-2">
@@ -155,11 +155,11 @@ function NavItem({ page, active }: { page: PageMeta; active: boolean }) {
     <Link
       href={page.href}
       className={cx(
-        "flex items-center gap-3 rounded-xl px-3.5 py-3 text-[15px] font-semibold transition-colors",
+        "flex items-center gap-3 rounded-xl px-3.5 py-3 text-[17px] font-semibold transition-colors",
         active ? "bg-emerald-100 text-emerald-900" : "text-stone-600 hover:bg-white hover:text-stone-900",
       )}
     >
-      <Icon size={20} strokeWidth={1.8} />
+      <Icon size={22} strokeWidth={1.8} />
       {page.label}
     </Link>
   );
@@ -172,16 +172,16 @@ export function PageHeader({ page, title, description, actions }: { page: PageMe
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div>
-        <p className="flex items-center gap-1.5 text-[13px] font-semibold text-emerald-700">
+        <p className="flex items-center gap-1.5 text-[15px] font-semibold text-emerald-700">
           <Icon size={15} />
           {page.label}
         </p>
-        <h1 className="mt-1 text-[30px] font-extrabold tracking-tight text-stone-900">{title ?? page.label}</h1>
-        <p className="mt-1 text-[14px] text-stone-500">{description ?? page.description}</p>
+        <h1 className="mt-1 text-[32px] font-extrabold tracking-tight text-stone-900">{title ?? page.label}</h1>
+        <p className="mt-1 text-[16px] text-stone-500">{description ?? page.description}</p>
       </div>
       <div className="flex flex-wrap items-center gap-2">
         {page.signer && (
-          <span className="flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-[12px] text-stone-500 ring-1 ring-stone-200">
+          <span className="flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-[14px] text-stone-500 ring-1 ring-stone-200">
             <Wallet size={14} className="text-emerald-700" />
             {ROLE_LABEL[page.signer]} 지갑으로 서명
             <span className="font-mono text-stone-700">

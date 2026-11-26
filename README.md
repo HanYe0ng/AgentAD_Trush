@@ -12,7 +12,7 @@ AI 에이전트 대상 광고의 **집계 기준을 검증**하고, 그 결과�
 
 | 메뉴 | 누가 | 하는 일 |
 | --- | --- | --- |
-| **홈 · 시연 진행판** | 발표자 | 6단계 진행 상황, ‘지금 할 일’, 수신→추천→표시 깔때기, 매체 보고 vs 인정 실적 |
+| **홈 · 광고 계약 현황** | 모든 역할 | 지금 상황(6단계 · 지금 할 일) → 광고가 얼마나 보였나요? → 몇 건이 정산되나요? → 누가 무엇을 기록했나요? |
 | **광고주** | 광고주 지갑 | 광고 상품 등록 + 계약 제안(한 번에), 검증된 실적 최종 승인 또는 이의 제기 |
 | **광고 매체** | 매체 지갑 (쇼핑 AI 운영사) | 계약 수락, ‘AI가 광고를 받은 횟수’로 실적 보고 |
 | **소비자** | 소비자 | 쇼핑 AI 채팅. 오른쪽 시연 패널에서 시연 조건·광고 기록 확인 |
@@ -37,7 +37,8 @@ Copy-Item .env.example .env
 npm run setup
 ```
 
-`setup` = 컨트랙트 컴파일 + ABI 내보내기 + SQLite 스키마 생성(`prisma/agentad.db`).
+`setup` = 컨트랙트 컴파일 + ABI 내보내기 + SQLite 스키마 생성(`prisma/demo.db`).
+라이브 시연 순서·멘트·문제 해결은 **[DEMO.md](DEMO.md)** 에 있습니다. 리허설을 다시 하려면 `npm run demo:reset` 후 브라우저 새로고침 (개발 서버는 켜 둔 채로).
 
 터미널 1 — 로컬 블록체인 노드 (켜 둔 채로 두세요)
 
@@ -57,8 +58,8 @@ npm run dev
 
 http://localhost:3000 — 상단 오른쪽이 초록색 **로컬 블록체인**이면 준비 완료입니다.
 
-> 로컬 노드를 재시작하면 체인 기록이 사라집니다. `npm run chain:deploy`로 다시 배포하고,
-> 깨끗하게 시작하려면 `npm run db:reset`(로컬 DB 전체 삭제)을 직접 실행하세요.
+> 로컬 노드를 재시작하면 체인 기록이 사라집니다. 그때는 `npm run demo:reset`(시연 기록 비우기 + 컨트랙트 재배포)을 실행하고 새로고침하세요.
+> Claude가 이 PC에서 응답하는지는 `npm run ai:check`로 확인할 수 있습니다.
 
 ### 서명 방식
 
@@ -85,7 +86,7 @@ http://localhost:3000 — 상단 오른쪽이 초록색 **로컬 블록체인**�
 6. **광고주** — 인정 실적을 `최종 승인`(또는 `이의 제기`).
 7. **홈** — 6단계가 모두 완료되고, 매체 보고 vs 인정 실적이 막대로 보입니다.
 8. **블록체인 기록** — 5건의 승인 이력(블록 번호·트랜잭션), `권한 테스트`(컨트랙트가 직접 거부), `다시 계산해 비교`(재현 일치).
-9. **증빙 변조** — 새 보고 후 검증기관 화면의 `증빙 변조해 보기` → `다시 검증`: 지문 불일치 → `반려 기록`. 홈의 ‘지금 할 일’이 재보고로 바뀝니다.
+9. **증빙 변조** — 새 보고 후 검증기관 화면의 `증빙 변조해 보기` → `다시 검증`: 지문 불일치 → `반려 기록`. 홈 ‘지금 할 일’이 재보고로 바뀝니다.
 
 ## 테스트
 
@@ -197,14 +198,15 @@ npx hardhat verify --network sepolia <컨트랙트주소> <배포자주소>
 
 ```
 app/
-  page.tsx (홈 진행판)  advertiser/  publisher/  consumer/  verifier/  ledger/
+  page.tsx (홈 대시보드)  advertiser/  publisher/  consumer/  verifier/  ledger/
   api/                                   # 백엔드 API
 components/                              # 화면 (app-shell, 역할별 *-view, results, product-card …)
 policies/                                # 집계 계약 정책 데이터 (JSON)
 lib/
   ai/ ads/ events/ campaigns/ reports/ verification/ policy/ blockchain/ test-mode/
   ledger.ts                              # 블록체인 기록 화면 데이터
-  client/progress.ts                     # 홈 진행판 6단계 계산
+  overview.ts                            # 계약 목록 요약 (홈 ‘다른 광고 계약’)
+  client/progress.ts                     # 계약별 6단계 진행 · 지금 할 일 · 상태 라벨 계산
 contracts/AgentAdRegistry.sol
 scripts/  prisma/  deployments/
 tests/  verification/  contract/  e2e/

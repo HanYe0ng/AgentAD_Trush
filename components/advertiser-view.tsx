@@ -105,7 +105,7 @@ export function AdvertiserView() {
                 <input className={inputClass} value={form.advertiserName} onChange={(e) => set("advertiserName", e.target.value)} />
               </Field>
               <Field label="광고 표기" hint="소비자 화면에 반드시 함께 보여야 하는 문구입니다. 빠지면 정산이 보류됩니다.">
-                <span className="inline-block rounded-lg bg-emerald-800 px-2.5 py-1 text-[12.5px] font-bold text-white">
+                <span className="inline-block rounded-lg bg-emerald-800 px-2.5 py-1 text-[14.5px] font-bold text-white">
                   유료 광고 · {form.advertiserName || "광고주"}
                 </span>
               </Field>
@@ -114,7 +114,7 @@ export function AdvertiserView() {
             <div className="space-y-3">
               <SectionLabel icon={<FilePenLine size={16} />}>계약 조건</SectionLabel>
               <Field label="정산 기준">
-                <p className="text-[14px] font-semibold text-stone-800">
+                <p className="text-[16px] font-semibold text-stone-800">
                   소비자 화면에 표시된 건만 인정 <span className="font-normal text-stone-400">(AI가 받기만 하거나 추천만 한 건 제외)</span>
                 </p>
               </Field>
@@ -163,16 +163,16 @@ function ApprovalCard() {
     body = <Empty icon={<Clock size={22} />} title="아직 승인할 실적이 없습니다">매체가 실적을 보고하고 검증기관이 검증하면 여기서 최종 승인합니다.</Empty>;
   } else if (report.status === "SUBMITTED") {
     body = (
-      <div className="flex items-start gap-3 rounded-xl bg-stone-50 p-4 text-[13.5px] text-stone-600">
+      <div className="flex items-start gap-3 rounded-xl bg-stone-50 p-4 text-[15.5px] text-stone-600">
         <Lock size={18} className="mt-0.5 shrink-0 text-stone-400" />
         <div>
           매체가 <b>{report.reportedCount}건</b>을 보고했습니다. 검증기관이 결과를 블록체인에 등록하면 승인할 수 있습니다.
-          <p className="mt-1 text-[12px] text-stone-400">화면에서 막는 것이 아니라, 컨트랙트가 ‘검증 완료’ 상태에서만 승인을 받아들입니다.</p>
+          <p className="mt-1 text-[14px] text-stone-400">화면에서 막는 것이 아니라, 컨트랙트가 ‘검증 완료’ 상태에서만 승인을 받아들입니다.</p>
         </div>
       </div>
     );
   } else if (report.status === "REJECTED") {
-    body = <p className="rounded-xl bg-rose-50 p-4 text-[13.5px] text-rose-800">검증기관이 증빙 불일치로 반려한 보고서입니다. 매체가 다시 보고해야 합니다.</p>;
+    body = <p className="rounded-xl bg-rose-50 p-4 text-[15.5px] text-rose-800">검증기관이 증빙 불일치로 반려한 보고서입니다. 매체가 다시 보고해야 합니다.</p>;
   } else {
     body = (
       <div className="space-y-4">
@@ -223,12 +223,12 @@ function ApprovalCard() {
           </div>
         )}
         {report.status === "FINALIZED" && (
-          <p className="flex items-center gap-2 rounded-xl bg-emerald-50 p-3 text-[14px] font-semibold text-emerald-800" data-testid="finalized">
+          <p className="flex items-center gap-2 rounded-xl bg-emerald-50 p-3 text-[16px] font-semibold text-emerald-800" data-testid="finalized">
             <Check size={18} /> {report.onChainVerified}건 최종 확정 · <TxLink hash={report.approveTxHash} />
           </p>
         )}
         {report.status === "DISPUTED" && (
-          <p className="rounded-xl bg-amber-50 p-3 text-[13.5px] text-amber-900" data-testid="disputed">
+          <p className="rounded-xl bg-amber-50 p-3 text-[15.5px] text-amber-900" data-testid="disputed">
             이의 제기됨: {report.disputeReason} · <TxLink hash={report.disputeTxHash} />
           </p>
         )}
@@ -277,8 +277,8 @@ function MyAds({
               >
                 <ProductThumb category={offer?.category ?? ""} brand={offer?.brand ?? ""} size="sm" />
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-[14.5px] font-bold text-stone-900">{offer?.productName}</p>
-                  <p className="text-[12px] text-stone-500">
+                  <p className="truncate text-[16.5px] font-bold text-stone-900">{offer?.productName}</p>
+                  <p className="text-[14px] text-stone-500">
                     {c.advertiserName} · {offer ? formatWon(offer.price) : ""} · {formatDate(c.startAt)}~
                   </p>
                 </div>
@@ -320,7 +320,7 @@ function MyAds({
 function TermsCard({ campaign }: { campaign: CampaignView }) {
   return (
     <Card title="블록체인에 제안한 계약" subtitle="계약 조건 전체의 지문(해시)이 체인에 기록되어, 집행 후에는 기준을 바꿀 수 없습니다.">
-      <dl className="grid gap-2 text-[13px]">
+      <dl className="grid gap-2 text-[15px]">
         <Row label="계약 상태" value={<Badge tone={campaign.chainStatus === "ACTIVE" ? "success" : "warning"}>{CAMPAIGN_STATUS_LABEL[campaign.chainStatus]}</Badge>} />
         <Row label="정산 기준" value="소비자 화면 표시 (같은 답변 안의 반복은 1건)" />
         <Row label="계약 조건 해시" value={<HashText value={campaign.termsHash} />} />

@@ -33,8 +33,8 @@ export function Card({
           <div className="flex min-w-0 items-start gap-3">
             {icon && <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-700">{icon}</span>}
             <div className="min-w-0">
-              {title && <h2 className="text-[17px] font-bold text-stone-900">{title}</h2>}
-              {subtitle && <p className="mt-0.5 text-[13px] leading-relaxed text-stone-500">{subtitle}</p>}
+              {title && <h2 className="text-[19px] font-bold text-stone-900">{title}</h2>}
+              {subtitle && <p className="mt-0.5 text-[15px] leading-relaxed text-stone-500">{subtitle}</p>}
             </div>
           </div>
           {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
@@ -59,7 +59,7 @@ export type Tone = keyof typeof BADGE_TONES;
 
 export function Badge({ tone = "neutral", children, className }: { tone?: Tone; children: ReactNode; className?: string }) {
   return (
-    <span className={cx("inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-0.5 text-[12px] font-semibold", BADGE_TONES[tone], className)}>
+    <span className={cx("inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-1 text-[14px] font-semibold", BADGE_TONES[tone], className)}>
       {children}
     </span>
   );
@@ -91,7 +91,7 @@ export function Button({
       disabled={disabled || loading}
       className={cx(
         "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-colors disabled:cursor-not-allowed",
-        size === "sm" ? "h-8 px-3 text-[12.5px]" : size === "lg" ? "h-12 px-5 text-[15px]" : "h-10 px-4 text-[14px]",
+        size === "sm" ? "h-9 px-3.5 text-[14.5px]" : size === "lg" ? "h-13 px-6 text-[17px]" : "h-11 px-4.5 text-[16px]",
         BUTTON_VARIANTS[variant],
         className,
       )}
@@ -104,7 +104,7 @@ export function Button({
 
 export function Mono({ children, className, title }: { children: ReactNode; className?: string; title?: string }) {
   return (
-    <span title={title} className={cx("font-mono text-[12px] tracking-tight", className)}>
+    <span title={title} className={cx("font-mono text-[14px] tracking-tight", className)}>
       {children}
     </span>
   );
@@ -122,7 +122,7 @@ export function HashText({ value, size = 6, className }: { value: string | null 
         setCopied(true);
         setTimeout(() => setCopied(false), 1200);
       }}
-      className={cx("font-mono text-[12px] tracking-tight text-stone-700 hover:text-emerald-700", className)}
+      className={cx("font-mono text-[14px] tracking-tight text-stone-700 hover:text-emerald-700", className)}
     >
       {copied ? "복사됨" : shortHash(value, size)}
     </button>
@@ -135,7 +135,7 @@ export function TxLink({ hash }: { hash: string | null | undefined }) {
   const url = config ? explorerTxUrl(config, hash) : null;
   if (!url) return <HashText value={hash} />;
   return (
-    <a href={url} target="_blank" rel="noreferrer" className="font-mono text-[12px] text-emerald-700 underline-offset-2 hover:underline">
+    <a href={url} target="_blank" rel="noreferrer" className="font-mono text-[14px] text-emerald-700 underline-offset-2 hover:underline">
       {shortHash(hash)} ↗
     </a>
   );
@@ -161,7 +161,7 @@ export function Notice({
   className?: string;
 }) {
   return (
-    <div role="status" className={cx("rounded-xl border px-4 py-3 text-[13px] leading-relaxed", NOTICE_TONES[tone], className)}>
+    <div role="status" className={cx("rounded-xl border px-4 py-3 text-[15px] leading-relaxed", NOTICE_TONES[tone], className)}>
       {title && <p className="font-semibold">{title}</p>}
       {children && <div className={title ? "mt-0.5" : ""}>{children}</div>}
     </div>
@@ -170,35 +170,35 @@ export function Notice({
 
 export function Field({ label, hint, required, children }: { label: string; hint?: ReactNode; required?: boolean; children: ReactNode }) {
   return (
-    <label className="grid gap-1.5 sm:grid-cols-[120px_1fr] sm:items-center">
-      <span className="text-[13px] font-medium text-stone-700">
+    <label className="grid gap-1.5 sm:grid-cols-[140px_1fr] sm:items-center">
+      <span className="text-[15px] font-medium text-stone-700">
         {label}
         {required && <span className="ml-0.5 text-rose-500">*</span>}
       </span>
       <div>
         {children}
-        {hint && <span className="mt-1 block text-[11.5px] text-stone-400">{hint}</span>}
+        {hint && <span className="mt-1 block text-[13.5px] text-stone-400">{hint}</span>}
       </div>
     </label>
   );
 }
 
 export const inputClass =
-  "h-10 w-full rounded-xl border border-stone-300 bg-white px-3 text-[14px] text-stone-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100";
+  "h-11 w-full rounded-xl border border-stone-300 bg-white px-3.5 text-[16px] text-stone-900 outline-none transition focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100";
 
 export function Empty({ icon, title, children }: { icon?: ReactNode; title?: ReactNode; children?: ReactNode }) {
   return (
     <div className="flex flex-col items-center py-10 text-center">
       {icon && <span className="mb-3 grid size-12 place-items-center rounded-2xl bg-stone-100 text-stone-400">{icon}</span>}
-      {title && <p className="text-[15px] font-semibold text-stone-700">{title}</p>}
-      {children && <div className="mt-1 text-[13px] text-stone-500">{children}</div>}
+      {title && <p className="text-[17px] font-semibold text-stone-700">{title}</p>}
+      {children && <div className="mt-1 text-[15px] text-stone-500">{children}</div>}
     </div>
   );
 }
 
 export function SectionLabel({ icon, children }: { icon?: ReactNode; children: ReactNode }) {
   return (
-    <p className="flex items-center gap-2 rounded-lg bg-emerald-50 px-3 py-2 text-[13.5px] font-semibold text-emerald-900">
+    <p className="flex items-center gap-2 rounded-lg bg-emerald-50 px-3 py-2 text-[15.5px] font-semibold text-emerald-900">
       {icon}
       {children}
     </p>

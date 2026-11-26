@@ -27,7 +27,11 @@ export default defineConfig({
   use: {
     baseURL: `http://localhost:${PORT}`,
     channel,
-    viewport: { width: 1440, height: 900 },
+    // 큰 화면(확대 적용) 확인: PW_VIEWPORT=2425x1115 npx playwright test
+    viewport: (() => {
+      const [width, height] = (process.env.PW_VIEWPORT ?? "1440x900").split("x").map(Number);
+      return { width, height };
+    })(),
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
   },

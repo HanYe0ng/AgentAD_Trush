@@ -1,0 +1,31 @@
+실행 일시: 2026-11-26 14:53~14:55 KST · Windows 11 · Node v24.15.0 · Microsoft Edge (Playwright)
+명령: npm run docs:screens  (= npm run test:e2e 와 같은 시나리오, 화면 캡처만 추가)
+
+[WebServer] Environment variables loaded from .env
+
+Running 14 tests using 1 worker
+
+Network: e2e (chainId 31337)
+Deployer/admin: 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+AgentAdRegistry deployed at 0x5fbdb2315678afecb367f032d93f642f64180aa3
+  granted ADVERTISER_ROLE → 0x70997970c51812dc3a010c7d01b50e0d17dc79c8
+  granted PUBLISHER_ROLE → 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc
+  granted VERIFIER_ROLE → 0x90f79bf6eb2c4f870365e785982e1f101e93b906
+Saved deployments/e2e.json
+  ok  1 [setup] › tests\e2e\global.setup.ts:32:1 › deploy AgentAdRegistry to e2e chain (16.6s)
+  ok  2 [e2e] › tests\e2e\demo-flow.spec.ts:31:1 › 광고주: 광고 상품을 등록하고 계약을 블록체인에 제안한다 (2.3s)
+  ok  3 [e2e] › tests\e2e\demo-flow.spec.ts:38:1 › 광고 매체: 같은 조건 해시로 계약을 수락한다 (1.2s)
+  ok  4 [e2e] › tests\e2e\demo-flow.spec.ts:44:1 › 소비자 · 정상: 광고 카드가 화면에 표시되고, 소비자에게 내부 ID는 보이지 않는다 (2.5s)
+  ok  5 [e2e] › tests\e2e\demo-flow.spec.ts:55:1 › 소비자 · 예산 초과: 광고를 받았지만 AI가 추천하지 않는다 (1.1s)
+  ok  6 [e2e] › tests\e2e\demo-flow.spec.ts:62:1 › 소비자 · 화면 미표시: 카드를 그리지 못하고 미표시를 보고한다 (1.4s)
+  ok  7 [e2e] › tests\e2e\demo-flow.spec.ts:69:1 › 소비자 · 측정 오류: 카드는 보이지만 표시 기록이 남지 않는다 (4.1s)
+  ok  8 [e2e] › tests\e2e\demo-flow.spec.ts:77:1 › 서버가 발급하지 않은 표시 토큰은 거부된다 (42ms)
+  ok  9 [e2e] › tests\e2e\demo-flow.spec.ts:97:1 › 광고 매체: AI가 광고를 받은 횟수(4건)를 실적으로 보고한다 (2.2s)
+  ok 10 [e2e] › tests\e2e\demo-flow.spec.ts:105:1 › 검증기관: 4건 중 1건 인정·1건 보류로 판정하고 블록체인에 등록한다 (2.2s)
+  ok 11 [e2e] › tests\e2e\demo-flow.spec.ts:121:1 › 광고주: 검증된 실적을 최종 승인하고, 홈 대시보드에 확정 실적과 6단계 완료가 표시된다 (3.5s)
+  ok 12 [e2e] › tests\e2e\demo-flow.spec.ts:134:1 › 블록체인 기록: 5건의 승인 이력, 컨트랙트 권한 거부, 재현 확인 (2.5s)
+  ok 13 [e2e] › tests\e2e\demo-flow.spec.ts:145:1 › 증빙 변조: 제출 후 가짜 표시 기록을 넣으면 지문 불일치로 반려된다 (5.4s)
+  ok 14 [e2e] › tests\e2e\demo-flow.spec.ts:168:1 › 재보고 후 광고주 이의 제기: 사유가 블록체인에 기록된다 (9.5s)
+
+  14 passed (1.2m)
+exit 0

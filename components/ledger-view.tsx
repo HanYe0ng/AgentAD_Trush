@@ -45,7 +45,7 @@ export function LedgerView() {
           {!currentId ? (
             <Empty title="현재 캠페인이 없습니다" />
           ) : !ledger ? (
-            <p className="text-[13px] text-stone-400">불러오는 중…</p>
+            <p className="text-[15px] text-stone-400">불러오는 중…</p>
           ) : ledger.entries.length === 0 ? (
             <Empty icon={<Clock size={22} />} title="아직 기록이 없습니다">광고주가 계약을 제안하면 첫 기록이 생깁니다.</Empty>
           ) : (
@@ -57,15 +57,15 @@ export function LedgerView() {
                   </span>
                   <div className="min-w-0 flex-1 rounded-xl border border-stone-200 p-3">
                     <div className="flex flex-wrap items-center gap-2">
-                      <p className="text-[14.5px] font-bold text-stone-900">{e.title}</p>
+                      <p className="text-[16.5px] font-bold text-stone-900">{e.title}</p>
                       <Badge tone="success">{ROLE_LABEL[e.role]}</Badge>
                       <Mono className="text-stone-400">{e.action}()</Mono>
-                      <span className="ml-auto text-[12px] text-stone-400">
+                      <span className="ml-auto text-[14px] text-stone-400">
                         {e.blockNumber !== null ? `블록 #${e.blockNumber}` : "블록 확인 불가"}
                         {e.timestamp && ` · ${formatDateTime(e.timestamp)}`}
                       </span>
                     </div>
-                    <dl className="mt-2 grid gap-1 text-[12.5px]">
+                    <dl className="mt-2 grid gap-1 text-[14.5px]">
                       {e.fields.map((f) => (
                         <div key={f.label} className="flex justify-between gap-3">
                           <dt className="text-stone-500">{f.label}</dt>
@@ -88,7 +88,7 @@ export function LedgerView() {
 
         <div className="space-y-6">
           <Card icon={<ShieldCheck size={18} />} title="스마트 컨트랙트와 역할">
-            <dl className="mb-4 grid gap-1.5 text-[13px]">
+            <dl className="mb-4 grid gap-1.5 text-[15px]">
               <div className="flex justify-between gap-3">
                 <dt className="text-stone-500">네트워크</dt>
                 <dd className="font-semibold text-stone-800">{config?.chainId === 11155111 ? "Ethereum Sepolia" : `로컬 블록체인 (chainId ${config?.chainId ?? "-"})`}</dd>
@@ -97,7 +97,7 @@ export function LedgerView() {
                 <dt className="text-stone-500">AgentAdRegistry</dt>
                 <dd>
                   {config?.registryAddress && config.explorerUrl ? (
-                    <a className="font-mono text-[12px] text-emerald-700 hover:underline" href={explorerAddressUrl(config, config.registryAddress) ?? "#"} target="_blank" rel="noreferrer">
+                    <a className="font-mono text-[14px] text-emerald-700 hover:underline" href={explorerAddressUrl(config, config.registryAddress) ?? "#"} target="_blank" rel="noreferrer">
                       {config.registryAddress.slice(0, 10)}… ↗
                     </a>
                   ) : (
@@ -106,8 +106,8 @@ export function LedgerView() {
                 </dd>
               </div>
             </dl>
-            <table className="w-full text-left text-[12.5px]">
-              <thead className="text-[11.5px] text-stone-400">
+            <table className="w-full text-left text-[14.5px]">
+              <thead className="text-[13.5px] text-stone-400">
                 <tr>
                   <th className="pb-1.5 font-medium">역할</th>
                   <th className="pb-1.5 font-medium">지갑</th>
@@ -123,7 +123,7 @@ export function LedgerView() {
                     </td>
                     <td className="py-2 text-stone-600">
                       {p.can}
-                      <span className="block font-mono text-[10.5px] text-stone-400">{p.fn}</span>
+                      <span className="block font-mono text-[13px] text-stone-400">{p.fn}</span>
                     </td>
                   </tr>
                 ))}
@@ -182,7 +182,7 @@ function PermissionTest() {
           text: (
             <>
               <b>컨트랙트가 거부</b> — {info.detail}
-              {info.raw && <Mono className="block break-all text-[10.5px] text-rose-700">{info.raw}</Mono>}
+              {info.raw && <Mono className="block break-all text-[13px] text-rose-700">{info.raw}</Mono>}
             </>
           ),
         },
@@ -195,19 +195,19 @@ function PermissionTest() {
   return (
     <Card icon={<Ban size={18} />} title="권한 테스트" subtitle="화면에서 막는 것이 아니라, 블록체인 컨트랙트가 직접 거부하는지 확인합니다.">
       {mode !== "dev" ? (
-        <p className="text-[13px] text-stone-500">MetaMask 모드에서는 역할이 다른 계정으로 바꾼 뒤 각 화면의 버튼을 눌러 보세요.</p>
+        <p className="text-[15px] text-stone-500">MetaMask 모드에서는 역할이 다른 계정으로 바꾼 뒤 각 화면의 버튼을 눌러 보세요.</p>
       ) : (
         <ul className="space-y-2" data-testid="permission-tests">
           {tests.map((t) => (
             <li key={t.key} className="rounded-xl border border-stone-200 p-3">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[13px] font-semibold text-stone-800">{t.label}</span>
+                <span className="text-[15px] font-semibold text-stone-800">{t.label}</span>
                 <Button size="sm" variant="secondary" loading={busy === t.key} disabled={!config?.deployed} onClick={() => void attempt(t)} data-testid={`try-${t.key}`}>
                   시도
                 </Button>
               </div>
               {results[t.key] && (
-                <p className={cx("mt-2 text-[12.5px]", results[t.key].ok ? "text-amber-700" : "text-rose-800")} data-testid={`result-${t.key}`}>
+                <p className={cx("mt-2 text-[14.5px]", results[t.key].ok ? "text-amber-700" : "text-rose-800")} data-testid={`result-${t.key}`}>
                   {results[t.key].text}
                 </p>
               )}
@@ -247,9 +247,9 @@ function ReproduceCard() {
       </Button>
       {action.view}
       {res && (
-        <div className={cx("mt-3 rounded-xl p-3 text-[13px]", res.matches ? "bg-emerald-50 text-emerald-900" : "bg-rose-50 text-rose-900")} data-testid="reproduce-result">
+        <div className={cx("mt-3 rounded-xl p-3 text-[15px]", res.matches ? "bg-emerald-50 text-emerald-900" : "bg-rose-50 text-rose-900")} data-testid="reproduce-result">
           <p className="font-bold">{res.matches ? "재현 일치 — 블록체인에 기록된 검증 결과와 같습니다" : "재현 불일치 — 검증 이후 데이터가 바뀌었습니다"}</p>
-          <p className="mt-1 text-[12px]">
+          <p className="mt-1 text-[14px]">
             다시 계산 <HashText value={res.hash} /> / 블록체인 <HashText value={res.anchored} />
           </p>
         </div>

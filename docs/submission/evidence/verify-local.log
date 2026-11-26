@@ -1,0 +1,17 @@
+실행 일시: 2026-11-26 14:56 KST · Windows 11 · Node v24.15.0
+명령: npm run chain:verify   (로컬 노드 8545, deployments/localhost.json)
+
+AgentAdRegistry 배포 코드 일치 확인
+  네트워크      localhost (RPC http://127.0.0.1:8545)
+  컨트랙트 주소 0x959922be3caee4b8cd9a407cc3ac1c251c2007b1  (배포 블록 27)
+  컴파일러      solc 0.8.28+commit.7893614a, optimizer on (runs 200), evmVersion cancun
+
+  ✔ 저장소 소스 = 컴파일에 쓰인 소스 — keccak256 0x9a1bf007…aba55573
+  ✔ 체인 ID 일치 — 31337
+  ✔ 온체인 바이트코드 = 컴파일 결과(deployedBytecode) — 5847 bytes, keccak256 0xc393bfd1…1e648264
+  ✔ 관리자 권한 — 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  ✔ advertiser 역할 권한 — 0x70997970c51812dc3a010c7d01b50e0d17dc79c8
+  ✔ publisher 역할 권한 — 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc
+  ✔ verifier 역할 권한 — 0x90f79bf6eb2c4f870365e785982e1f101e93b906
+
+결과: 배포된 컨트랙트는 저장소의 소스를 위 설정으로 컴파일한 코드와 바이트 단위로 같습니다.

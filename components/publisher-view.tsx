@@ -54,13 +54,13 @@ function ContractInbox() {
               <div className="flex gap-3">
                 <ProductThumb category={offer?.category ?? ""} brand={offer?.brand ?? ""} size="sm" />
                 <div className="min-w-0">
-                  <p className="text-[15px] font-bold text-stone-900">{offer?.productName}</p>
-                  <p className="text-[12.5px] text-stone-500">
+                  <p className="text-[17px] font-bold text-stone-900">{offer?.productName}</p>
+                  <p className="text-[14.5px] text-stone-500">
                     광고주 {c.advertiserName} · {offer ? formatWon(offer.price) : ""} · {formatDate(c.startAt)} ~ {formatDate(c.endAt)}
                   </p>
                 </div>
               </div>
-              <dl className="mt-3 grid gap-1.5 rounded-lg bg-white p-3 text-[12.5px]">
+              <dl className="mt-3 grid gap-1.5 rounded-lg bg-white p-3 text-[14.5px]">
                 <Term label="정산 기준" value="소비자 화면에 표시된 건만 인정" />
                 <Term label="중복 처리" value="같은 AI 답변 안의 반복은 1건" />
                 <Term label="증빙" value="수신·추천 기록 + 화면 표시 기록" />
@@ -90,10 +90,10 @@ function ContractInbox() {
         })}
         {active.length > 0 && (
           <div className="pt-2">
-            <p className="mb-2 text-[12.5px] font-semibold text-stone-500">확정된 계약</p>
+            <p className="mb-2 text-[14.5px] font-semibold text-stone-500">확정된 계약</p>
             <ul className="space-y-1.5">
               {active.map((c) => (
-                <li key={c.id} className="flex items-center justify-between rounded-lg bg-stone-50 px-3 py-2 text-[13px]">
+                <li key={c.id} className="flex items-center justify-between rounded-lg bg-stone-50 px-3 py-2 text-[15px]">
                   <span className="font-semibold text-stone-800">{c.offers[0]?.productName}</span>
                   <span className="flex items-center gap-2 text-stone-500">
                     <Badge tone="success">확정</Badge>
@@ -133,28 +133,28 @@ function ReportCard() {
       <div className="space-y-4">
         {c.chainStatus !== "ACTIVE" && <Notice tone="warning">계약을 먼저 수락해야 실적을 보고할 수 있습니다.</Notice>}
         <div className="rounded-xl bg-stone-50 p-4">
-          <p className="flex items-center gap-1.5 text-[13px] font-semibold text-stone-700">
+          <p className="flex items-center gap-1.5 text-[15px] font-semibold text-stone-700">
             <Bot size={16} className="text-emerald-700" /> 우리 쇼핑 AI의 자체 집계
           </p>
-          <p className="mt-1 text-[12.5px] text-stone-500">매체는 AI가 광고 정보를 받은 횟수를 ‘노출’로 세어 보고합니다.</p>
+          <p className="mt-1 text-[14.5px] text-stone-500">매체는 AI가 광고 정보를 받은 횟수를 ‘노출’로 세어 보고합니다.</p>
           <div className="mt-3 flex flex-wrap items-end gap-6">
             <div>
-              <p className="flex items-center gap-1 text-[12px] text-stone-500">
+              <p className="flex items-center gap-1 text-[14px] text-stone-500">
                 <Inbox size={13} /> AI가 광고를 받은 횟수 (미보고분)
               </p>
-              <p className="tabular text-[36px] font-extrabold leading-none text-stone-900" data-testid="received-count">
+              <p className="tabular text-[38px] font-extrabold leading-none text-stone-900" data-testid="received-count">
                 {suggested}
-                <span className="ml-1 text-[15px] text-stone-400">건</span>
+                <span className="ml-1 text-[17px] text-stone-400">건</span>
               </p>
             </div>
-            <p className="text-[12px] text-stone-400">
+            <p className="text-[14px] text-stone-400">
               {formatDateTime(unreported.periodStart)} 이후 기록 {unreported.eventCount}건
             </p>
           </div>
         </div>
 
         <label className="block">
-          <span className="text-[13px] font-medium text-stone-700">보고할 실적 (건)</span>
+          <span className="text-[15px] font-medium text-stone-700">보고할 실적 (건)</span>
           <input
             type="number"
             min={0}
@@ -193,11 +193,11 @@ function ReportCard() {
 
         {detail.reports.length > 0 && (
           <div>
-            <p className="mb-2 text-[12.5px] font-semibold text-stone-500">보고 내역</p>
+            <p className="mb-2 text-[14.5px] font-semibold text-stone-500">보고 내역</p>
             <ul className="space-y-1.5" data-testid="report-list">
               {detail.reports.map((r) => (
-                <li key={r.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-stone-50 px-3 py-2 text-[13px]" data-status={r.status}>
-                  <span className="font-mono text-[12px] text-stone-700">{r.id}</span>
+                <li key={r.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-stone-50 px-3 py-2 text-[15px]" data-status={r.status}>
+                  <span className="font-mono text-[14px] text-stone-700">{r.id}</span>
                   <span className="text-stone-600">보고 {r.reportedCount}건</span>
                   <Badge tone={STATUS_TONE[r.status]}>{REPORT_STATUS_LABEL[r.status]}</Badge>
                   <TxLink hash={r.submitTxHash} />

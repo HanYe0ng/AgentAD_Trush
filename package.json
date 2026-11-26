@@ -11,17 +11,21 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "db:push": "prisma db push",
     "db:reset": "prisma db push --force-reset",
+    "demo:reset": "tsx scripts/demo-reset.ts",
+    "ai:check": "tsx scripts/check-ai.ts",
     "chain": "hardhat node",
     "chain:build": "hardhat build && tsx scripts/export-abi.ts",
     "chain:deploy": "hardhat run scripts/deploy.ts --network localhost",
     "chain:deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "chain:verify": "tsx scripts/verify-local.ts",
     "test": "npm run test:unit && npm run test:contract",
     "test:unit": "vitest run",
     "test:contract": "hardhat test nodejs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "docs:screens": "playwright test -c playwright.capture.config.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.14.0",

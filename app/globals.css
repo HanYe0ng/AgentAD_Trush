@@ -24,3 +24,46 @@ body {
 .tabular {
   font-variant-numeric: tabular-nums;
 }
+
+/*
+ * 화면이 클수록 글자 · 버튼 · 아이콘 · 여백을 함께 키운다.
+ * 화면은 약 1,360 × 780px 기준으로 설계했고, 큰 모니터·프로젝터에서는 같은 배치를 비율대로 확대한다.
+ * 폭과 높이를 모두 보므로 확대해도 한 화면에 보이는 양은 기준보다 줄지 않는다.
+ * --app-zoom 은 화면 높이(100vh)를 쓰는 곳에서 확대 비율을 보정할 때 쓴다.
+ */
+:root {
+  --app-zoom: 1;
+}
+@media (min-width: 1496px) and (min-height: 858px) {
+  :root {
+    --app-zoom: 1.1;
+  }
+}
+@media (min-width: 1632px) and (min-height: 936px) {
+  :root {
+    --app-zoom: 1.2;
+  }
+}
+@media (min-width: 1768px) and (min-height: 1014px) {
+  :root {
+    --app-zoom: 1.3;
+  }
+}
+@media (min-width: 1904px) and (min-height: 1092px) {
+  :root {
+    --app-zoom: 1.4;
+  }
+}
+@media (min-width: 2040px) and (min-height: 1170px) {
+  :root {
+    --app-zoom: 1.5;
+  }
+}
+@media (min-width: 2176px) and (min-height: 1248px) {
+  :root {
+    --app-zoom: 1.6;
+  }
+}
+body {
+  zoom: var(--app-zoom);
+}

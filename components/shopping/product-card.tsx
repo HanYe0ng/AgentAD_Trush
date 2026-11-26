@@ -139,15 +139,15 @@ export function ProductCard({ item, responseId, onEvent }: { item: ShoppingItem;
       <ProductThumb category={item.category} brand={item.brand} />
       <div className="min-w-0 flex-1">
         {item.sponsored && (
-          <span data-ad-disclosure className="inline-block rounded-lg bg-emerald-800 px-2.5 py-1 text-[12px] font-bold text-white">
+          <span data-ad-disclosure className="inline-block rounded-lg bg-emerald-800 px-2.5 py-1 text-[14px] font-bold text-white">
             유료 {item.disclosureLabel ?? "광고"} · {item.brand}
           </span>
         )}
-        <p className="mt-1.5 text-[17px] font-bold text-stone-900" data-evidence="product-name">
+        <p className="mt-1.5 text-[19px] font-bold text-stone-900" data-evidence="product-name">
           {item.name}
         </p>
-        <p className="tabular text-[15px] font-semibold text-stone-800">{formatWon(item.price)}</p>
-        <p className="mt-1 text-[13px] leading-relaxed text-stone-500">{item.reason || item.description}</p>
+        <p className="tabular text-[17px] font-semibold text-stone-800">{formatWon(item.price)}</p>
+        <p className="mt-1 text-[15px] leading-relaxed text-stone-500">{item.reason || item.description}</p>
       </div>
     </div>
   );

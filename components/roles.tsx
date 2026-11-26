@@ -14,7 +14,7 @@ export interface PageMeta {
 }
 
 export const PAGES: PageMeta[] = [
-  { key: "home", href: "/", label: "홈", icon: House, description: "시연 진행 상황과 결과를 한눈에 봅니다." },
+  { key: "home", href: "/", label: "홈", icon: House, description: "광고 계약 현황과 처리할 일을 한눈에 봅니다." },
   {
     key: "advertiser",
     href: "/advertiser",

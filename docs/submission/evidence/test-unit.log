@@ -1,0 +1,30 @@
+실행 일시: 2026-11-26 14:56 KST · Windows 11 · Node v24.15.0
+명령: npx vitest run --reporter=verbose
+
+ RUN  v5.1.2 C:/Users/lilla/projects/blockchain_assignment
+
+ ✓ tests/verification/engine.test.ts > AGENTAD-PRESENTED-V1: 기본 정산 지표 AD_PRESENTED > 매체 보고 5건 → 검증 실적 2건, 제외 3건 = 미추천 2 + 추천 후 미표시 1 8ms
+ ✓ tests/verification/engine.test.ts > AGENTAD-PRESENTED-V1: 기본 정산 지표 AD_PRESENTED > ‘검증 불가’와 ‘미표시 확인’을 구분한다: 표시·미표시 기록이 모두 없으면 INCONCLUSIVE(정산 보류) 2ms
+ ✓ tests/verification/engine.test.ts > AGENTAD-PRESENTED-V1: 기본 정산 지표 AD_PRESENTED > 화면 증빙 해시가 없으면 검증 불가, 다른 상품 내용이면 INVALID 2ms
+ ✓ tests/verification/engine.test.ts > AGENTAD-PRESENTED-V1: 기본 정산 지표 AD_PRESENTED > 광고 관계 공개(‘광고’ 표기)가 없으면 준수 위반으로 기록하고 정산을 보류한다 2ms
+ ✓ tests/verification/engine.test.ts > AGENTAD-PRESENTED-V1: 기본 정산 지표 AD_PRESENTED > offerId가 구조적으로 연결되지 않은 추천(상품명만 일치)은 유료 광고 실적이 아니다 1ms
+ ✓ tests/verification/engine.test.ts > AGENTAD-PRESENTED-V1: 기본 정산 지표 AD_PRESENTED > 가시성(AD_VIEWABLE)은 보조 지표로 집계되며 정산 건수에는 영향을 주지 않는다 2ms
+ ✓ tests/verification/engine.test.ts > 중복·무효 처리 > 같은 응답·같은 광고의 표시 이벤트가 재전송되면 1건만 인정하고 DUPLICATE로 제외한다 1ms
+ ✓ tests/verification/engine.test.ts > 중복·무효 처리 > 새 질문으로 받은 새 응답은 별도의 집계 대상이다 2ms
+ ✓ tests/verification/engine.test.ts > 중복·무효 처리 > 자동 테스트 실행은 실제 광고 집행 실적에서 제외한다 (excludeTestTraffic) 1ms
+ ✓ tests/verification/engine.test.ts > 중복·무효 처리 > 시연용 샌드박스 정책은 테스트 트래픽에도 같은 인정 조건을 적용한다 2ms
+ ✓ tests/verification/engine.test.ts > 중복·무효 처리 > 활성 계약 기간 밖의 기록, 등록되지 않은 제안, 연결되지 않은 기록은 제외한다 2ms
+ ✓ tests/verification/engine.test.ts > 중복·무효 처리 > 이벤트 기록으로 뒷받침되지 않는 보고분을 구분한다 1ms
+ ✓ tests/verification/engine.test.ts > 증빙 무결성 (원본 증빙과 해시 불일치 → 검증 실패) > 제출 이후 표시 이벤트를 몰래 추가하면 해시 불일치로 탐지하고 집계에서 제외한다 2ms
+ ✓ tests/verification/engine.test.ts > 증빙 무결성 (원본 증빙과 해시 불일치 → 검증 실패) > 제출 이후 이벤트 내용을 바꾸면 수정된 이벤트로 탐지한다 1ms
+ ✓ tests/verification/engine.test.ts > 증빙 무결성 (원본 증빙과 해시 불일치 → 검증 실패) > DB의 제출 목록과 해시까지 바꿔도 블록체인에 기록된 해시와 달라 탐지된다 2ms
+ ✓ tests/verification/engine.test.ts > 증빙 무결성 (원본 증빙과 해시 불일치 → 검증 실패) > DB의 계약 조건이 블록체인에 확정된 조건과 다르면 무결성 실패 1ms
+ ✓ tests/verification/engine.test.ts > 증빙 무결성 (원본 증빙과 해시 불일치 → 검증 실패) > 이벤트 해시는 내용이 한 글자만 달라도 바뀐다 0ms
+ ✓ tests/verification/engine.test.ts > 재현성 > 입력 순서가 달라도 같은 데이터·같은 정책이면 같은 검증 결과 해시가 나온다 3ms
+ ✓ tests/verification/engine.test.ts > 재현성 > 정책이 다르면 같은 데이터라도 결과 해시가 달라진다 3ms
+
+ Test Files  1 passed (1)
+      Tests  19 passed (19)
+   Start at  14:56:18
+   Duration  956ms (import 88%, transform 6%, tests 5%, worker 1%)
+

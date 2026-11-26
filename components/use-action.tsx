@@ -26,7 +26,7 @@ export function useAction() {
         body: (
           <>
             {info.detail}
-            {info.raw && <Mono className="mt-1 block break-all text-[11px] text-rose-800">{info.raw}</Mono>}
+            {info.raw && <Mono className="mt-1 block break-all text-[13px] text-rose-800">{info.raw}</Mono>}
           </>
         ),
       });

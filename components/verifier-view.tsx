@@ -171,8 +171,8 @@ export function VerifierView() {
 function Info({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div>
-      <p className="text-[12px] text-stone-400">{label}</p>
-      <div className="text-[14.5px] font-semibold text-stone-800">{value}</div>
+      <p className="text-[14px] text-stone-400">{label}</p>
+      <div className="text-[16.5px] font-semibold text-stone-800">{value}</div>
     </div>
   );
 }
@@ -187,7 +187,7 @@ function IntegrityCard({ result }: { result: VerificationResult }) {
         <HashRow label="지금 DB 원본으로 다시 만든 지문" value={ev.computedHash} ok={ev.intact} />
         <div className={cx("flex items-start gap-3 rounded-xl p-4", ok ? "bg-emerald-50 text-emerald-900" : "bg-rose-50 text-rose-900")}>
           {ok ? <Check size={22} className="shrink-0" /> : <X size={22} className="shrink-0" />}
-          <div className="text-[13.5px]">
+          <div className="text-[15.5px]">
             <p className="font-bold">{ok ? "일치 — 보고 이후 원본이 바뀌지 않았습니다" : "불일치 — 보고 이후 원본이 바뀌었습니다"}</p>
             {!ok && ev.addedEventIds.length > 0 && <p className="mt-0.5">나중에 추가된 기록: {ev.addedEventIds.join(", ")}</p>}
             {!ok && ev.modifiedEventIds.length > 0 && <p className="mt-0.5">바뀐 기록: {ev.modifiedEventIds.join(", ")}</p>}
@@ -202,8 +202,8 @@ function IntegrityCard({ result }: { result: VerificationResult }) {
 function HashRow({ label, value, ok }: { label: string; value: string; ok?: boolean }) {
   return (
     <div className="rounded-xl bg-stone-50 px-4 py-2.5">
-      <p className="text-[12px] text-stone-500">{label}</p>
-      <p className={cx("font-mono text-[13px] font-semibold", ok === false ? "text-rose-700" : ok ? "text-emerald-700" : "text-stone-800")} title={value}>
+      <p className="text-[14px] text-stone-500">{label}</p>
+      <p className={cx("font-mono text-[15px] font-semibold", ok === false ? "text-rose-700" : ok ? "text-emerald-700" : "text-stone-800")} title={value}>
         {shortHash(value, 10)}
       </p>
     </div>
@@ -226,8 +226,8 @@ function UnitChecks({ result, detail }: { result: VerificationResult; detail: Ca
       </div>
       {result.excludedEvents.length > 0 && (
         <div className="mt-4 rounded-xl bg-stone-50 p-4">
-          <p className="text-[13px] font-semibold text-stone-700">따로 걸러 낸 기록 {result.excludedEvents.length}건</p>
-          <ul className="mt-1.5 space-y-1 text-[12.5px] text-stone-600">
+          <p className="text-[15px] font-semibold text-stone-700">따로 걸러 낸 기록 {result.excludedEvents.length}건</p>
+          <ul className="mt-1.5 space-y-1 text-[14.5px] text-stone-600">
             {result.excludedEvents.map((e) => (
               <li key={e.eventId} className="flex gap-2">
                 <span className="font-mono text-stone-500">{e.eventId}</span>
@@ -256,8 +256,8 @@ function UnitRow({ unit: u, query, result }: { unit: UnitResult; query?: string;
   return (
     <div className="flex flex-wrap items-center gap-x-6 gap-y-2 py-3" data-verdict={u.verdict}>
       <div className="min-w-56 flex-1">
-        <p className="text-[14px] font-semibold text-stone-800">“{query ?? u.runId}”</p>
-        <p className="font-mono text-[11.5px] text-stone-400">
+        <p className="text-[16px] font-semibold text-stone-800">“{query ?? u.runId}”</p>
+        <p className="font-mono text-[13.5px] text-stone-400">
           {u.runId} · {u.responseId ?? "응답에 광고 없음"} · {u.offerId}
           {u.dataMode === "TEST" && " · 시연 데이터"}
         </p>
@@ -267,7 +267,7 @@ function UnitRow({ unit: u, query, result }: { unit: UnitResult; query?: string;
           <li
             key={c.label}
             className={cx(
-              "flex items-center gap-1 rounded-lg px-2 py-1 text-[12px] font-semibold",
+              "flex items-center gap-1 rounded-lg px-2 py-1 text-[14px] font-semibold",
               c.state === "ok" ? "bg-emerald-50 text-emerald-800" : c.state === "no" ? "bg-stone-100 text-stone-500" : c.state === "unknown" ? "bg-amber-50 text-amber-800" : "bg-white text-stone-300",
             )}
           >
@@ -277,8 +277,8 @@ function UnitRow({ unit: u, query, result }: { unit: UnitResult; query?: string;
         ))}
       </ul>
       <div className="flex w-56 items-center justify-end gap-2">
-        <span className="text-right text-[12px] text-stone-500">{REASON_PLAIN[u.reason].label}</span>
-        <span className={cx("rounded-lg px-2.5 py-1 text-[13px] font-bold", view.cls)}>{view.label}</span>
+        <span className="text-right text-[14px] text-stone-500">{REASON_PLAIN[u.reason].label}</span>
+        <span className={cx("rounded-lg px-2.5 py-1 text-[15px] font-bold", view.cls)}>{view.label}</span>
       </div>
     </div>
   );
