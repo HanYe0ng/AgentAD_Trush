@@ -1,0 +1,20 @@
+{
+  "policyId": "AGENTAD-PRESENTED-V1",
+  "version": "1.0.0",
+  "title": "검증된 AI 광고 표시 (Verified Sponsored Presentation)",
+  "environment": "PRODUCTION",
+  "billingMetric": "AD_PRESENTED",
+  "requires": ["AD_RECEIVED", "AD_RECOMMENDED", "AD_PRESENTED"],
+  "requireSponsoredOffer": true,
+  "requireEvidence": true,
+  "deduplicationKey": ["campaignId", "offerId", "responseId"],
+  "excludeTestTraffic": true,
+  "onMissingEvidence": "INCONCLUSIVE",
+  "onDuplicate": "EXCLUDE",
+  "onDisclosureViolation": "INCONCLUSIVE",
+  "auditApprovalRequired": true,
+  "disclosure": { "required": true, "label": "광고" },
+  "supplementaryMetrics": ["AD_RECEIVED", "AD_RECOMMENDED", "AD_VIEWABLE"],
+  "viewability": { "minVisibleRatio": 0.5, "minVisibleMs": 1000 },
+  "notice": "IAB/MRC 광고 측정 원칙을 참고한 AgentAd Trust 자체 계약 규칙 제안이며, 업계 인증 표준이 아닙니다."
+}

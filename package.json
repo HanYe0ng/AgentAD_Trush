@@ -1,0 +1,53 @@
+{
+  "name": "agentad-trust",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AgentAd Trust MVP - AI 에이전트 광고 집계 검증 + 블록체인 공동 승인",
+  "scripts": {
+    "postinstall": "prisma generate",
+    "setup": "npm run chain:build && prisma db push",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "db:push": "prisma db push",
+    "db:reset": "prisma db push --force-reset",
+    "chain": "hardhat node",
+    "chain:build": "hardhat build && tsx scripts/export-abi.ts",
+    "chain:deploy": "hardhat run scripts/deploy.ts --network localhost",
+    "chain:deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "test": "npm run test:unit && npm run test:contract",
+    "test:unit": "vitest run",
+    "test:contract": "hardhat test nodejs",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0",
+    "@prisma/client": "^6.19.3",
+    "lucide-react": "^1.80.0",
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "viem": "^2.58.6",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.7",
+    "@openzeppelin/contracts": "^5.6.1",
+    "@playwright/test": "^1.65.1",
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^24.19.4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "hardhat": "^3.22.0",
+    "prisma": "^6.19.3",
+    "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.1.2"
+  }
+}

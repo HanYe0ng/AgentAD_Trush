@@ -1,0 +1,146 @@
+// AgentAd Trust MVP - 시연용 데이터베이스 (SQLite)
+// 원본 사용자 대화와 상세 실행 기록은 DB에만 저장하고, 블록체인에는 해시와 승인 상태만 기록한다.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// 원자적 ID 발급용 시퀀스 (EVT-000001, RUN-0001 ...)
+model Counter {
+  name  String @id
+  value Int
+}
+
+/// 광고 계약(캠페인): 집계 정책 버전 + 계약 조건
+model Campaign {
+  id                String    @id // CAM-001-7F3A
+  name              String
+  advertiserName    String
+  advertiserAddress String
+  publisherName     String
+  publisherAddress  String
+  verifierName      String
+  verifierAddress   String
+  policyId          String // AGENTAD-PRESENTED-V1
+  policyHash        String // keccak256(정책 JSON)
+  startAt           DateTime
+  endAt             DateTime
+  termsJson         String // 계약 조건 원문 (canonical JSON)
+  termsHash         String // keccak256(termsJson) - 블록체인에서 광고주 제안 + 매체 수락으로 확정
+  chainStatus       String    @default("DRAFT") // DRAFT | PROPOSED | ACTIVE
+  chainId           Int?
+  proposeTxHash     String?
+  acceptTxHash      String?
+  activatedAt       DateTime?
+  createdAt         DateTime  @default(now())
+
+  offers  Offer[]
+  events  AdEvent[]
+  reports Report[]
+}
+
+/// 스폰서 광고 상품(유료 광고 제안)
+model Offer {
+  id          String @id // AD-001
+  campaignId  String
+  productName String
+  brand       String
+  price       Int
+  category    String
+  keywords    String // 쉼표 구분
+  description String
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  @@index([campaignId])
+}
+
+/// 쇼핑 AI 실행 기록 (사용자 질문 · 추천 응답)
+model AiRun {
+  id               String   @id // RUN-0001
+  query            String
+  dataMode         String // LIVE | TEST
+  scenario         String
+  provider         String // anthropic | rule-based | fixture
+  model            String?
+  answer           String
+  responseId       String?  @unique // RES-0001 (실행 1건당 최종 추천 응답 1건)
+  itemsJson        String
+  receivedOfferIds String
+  createdAt        DateTime @default(now())
+
+  events AdEvent[]
+}
+
+/// 광고 이벤트: AD_RECEIVED / AD_RECOMMENDED / AD_PRESENTED / AD_VIEWABLE / AD_NOT_PRESENTED
+model AdEvent {
+  id           String   @id // EVT-000001
+  campaignId   String
+  offerId      String
+  runId        String
+  responseId   String?
+  eventType    String
+  timestamp    DateTime
+  source       String // AI_BACKEND | CONSUMER_FRONTEND | TEST_FIXTURE
+  dataMode     String // LIVE | TEST
+  payloadJson  String
+  hash         String // 수집 시점의 이벤트 해시
+  recordedAt   DateTime @default(now())
+  /// 시연용 '증빙 변조 시뮬레이션'이 삽입한 이벤트 표시 (해시·검증 대상 아님, UI 라벨용)
+  testInjected Boolean  @default(false)
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  run      AiRun    @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([campaignId, recordedAt])
+  @@index([runId])
+  @@index([responseId])
+}
+
+/// 광고 매체의 집계 보고
+model Report {
+  id              String   @id // RPT-001-2B9C
+  campaignId      String
+  reportedCount   Int
+  reportedBasis   String
+  periodStart     DateTime
+  periodEnd       DateTime
+  manifestJson    String // 제출 시점의 증빙 목록 [{eventId, hash}]
+  evidenceHash    String
+  status          String   @default("PENDING_CHAIN") // PENDING_CHAIN | SUBMITTED | VERIFIED | REJECTED | DISPUTED | FINALIZED
+  submitTxHash    String?
+  verifyTxHash    String?
+  approveTxHash   String?
+  disputeTxHash   String?
+  disputeReason   String?
+  onChainVerified Int?
+  onChainHeld     Int?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  campaign      Campaign       @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  verifications Verification[]
+
+  @@index([campaignId])
+}
+
+/// 정책 엔진 검증 결과
+model Verification {
+  id               String   @id // VER-0001
+  reportId         String
+  verifiedCount    Int // VALID
+  heldCount        Int // INCONCLUSIVE
+  evidenceIntact   Boolean
+  resultJson       String
+  verificationHash String
+  createdAt        DateTime @default(now())
+
+  report Report @relation(fields: [reportId], references: [id], onDelete: Cascade)
+
+  @@index([reportId])
+}

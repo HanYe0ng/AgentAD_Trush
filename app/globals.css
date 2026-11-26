@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo",
+    "Noto Sans KR", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #f7f6f2;
+  color: #1c2321;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #bbf7d0;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
