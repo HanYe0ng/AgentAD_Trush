@@ -75,7 +75,7 @@
 | --- | --- | --- | --- |
 | 고한영 | 기획 · 블록체인 · 스마트 컨트랙트 | [작성 필요 — 예시 형식] · Claude Code로 MVP 구현·통합 진행 ([AI 활용표](07-ai-usage.md#3-ai-활용표) 1~16) · GitHub 저장소 생성·푸시 · 리허설 후 시연 문제 제기와 수정 요청 · … | 커밋 `ae4f2a3`, [4-2 테스트 로그](04-test-results.md), 발표자료 [작성 필요]쪽 |
 | 김승현 | 기획 · AI · 백엔드·프론트엔드 | [작성 필요] | [작성 필요] |
-| 설선선 | 기획 · UI/UX · 테스트 | [작성 필요] | [작성 필요] |
+| 설선선 | 기획 · UI/UX · 테스트 | 역할별 UI 5종의 초기 시안을 만들고, 실제 MVP 흐름에 맞춰 광고 매체 화면을 추가해 최종 화면 6종으로 보완했다. 광고 매체의 계약 수락·실적 보고, 검증기관의 인정·제외·보류 판정, 광고주의 최종 승인·이의 제기 과정을 클릭 가능한 프로토타입으로 구성했다. 사용자 흐름도, 주요 버튼의 동작, 디자인 시스템을 정리하고 GitHub PR #1로 공유했다. | [Figma 초기 시안](https://www.figma.com/design/uSVPrv9zkHvPKRlyL5LMw2?node-id=1-345) · [최종 UI 6종](https://www.figma.com/design/uSVPrv9zkHvPKRlyL5LMw2?node-id=7-3) · [클릭 가능한 프로토타입](https://www.figma.com/proto/uSVPrv9zkHvPKRlyL5LMw2?node-id=7-3&starting-point-node-id=7%3A3) · [GitHub PR #1](https://github.com/HanYe0ng/AgentAD_Trush/pull/1) |
 | 공동 | 기획 | 문제 정의, 기존 대안·블록체인 필요성 조사, 비즈니스모델, 중간점검 발표, MVP 아키텍처 v1.0·집계 계약 정책 v1.0 문서 [작성 필요: 실제 담당자] | 중간점검 자료, 최종 발표자료 [작성 필요]쪽 |
 
 **개발 이력 참고**: 현재 GitHub의 커밋은 `ae4f2a3 AgentAD Trush MVP` 1개이고, 이후 변경(홈 대시보드, 시연 초기화, 제출 자료 등)은 아직 커밋되지 않았습니다. 제출 전 기능 단위로 나눠 커밋하면 “코드와 개발 이력” 근거가 됩니다.
