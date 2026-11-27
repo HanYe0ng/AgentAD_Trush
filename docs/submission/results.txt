@@ -1,0 +1,11 @@
+T00-home PASS
+T01-advertiser-proposal PASS
+T02-publisher-accept PASS
+T03-sponsored-card PASS
+T04-budget-exceeded PASS
+T05-not-presented PASS
+T06-measurement-missing PASS
+T07-publisher-report PASS
+T08-verification-registered PASS
+T09-home-finalized PASS
+T10-ledger-reproduced PASS

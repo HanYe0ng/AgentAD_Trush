@@ -1,0 +1,23 @@
+
+> agentad-trust@0.1.0 chain:verify
+> tsx scripts/verify-local.ts
+
+AgentAdRegistry 氚绊彫 旖旊摐 鞚检箻 頇曥澑
+  雱ろ姼鞗岉伂      localhost (RPC http://127.0.0.1:8545)
+  旎姼霝欗姼 欤检唽 0x5fbdb2315678afecb367f032d93f642f64180aa3  (氚绊彫 敫旊 1)
+  旎错寣鞚茧煬      solc 0.8.28+commit.7893614a, optimizer on (runs 200), evmVersion cancun
+
+  鉁?鞝€鞛レ唽 靻岇姢 = 旎错寣鞚检棎 鞊办澑 靻岇姢 鈥?keccak256 0x9a1bf007鈥ba55573
+  鉁?觳挫澑 ID 鞚检箻 鈥?31337
+  鉁?鞓泊鞚?氚旍澊韸胳綌霌?= 旎错寣鞚?瓴瓣臣(deployedBytecode) 鈥?5847 bytes, keccak256 0x36c6239a鈥?9b630ff
+  鉁?甏€毽瀽 甓岉暅 鈥?0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  鉁?advertiser 鞐暊 甓岉暅 鈥?0x70997970c51812dc3a010c7d01b50e0d17dc79c8
+  鉁?publisher 鞐暊 甓岉暅 鈥?0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc
+  鉁?verifier 鞐暊 甓岉暅 鈥?0x90f79bf6eb2c4f870365e785982e1f101e93b906
+
+瓴瓣臣: 氚绊彫霅?旎姼霝欗姼電?鞝€鞛レ唽鞚?靻岇姢毳?鞙?靹れ爼鞙茧 旎错寣鞚柬暅 旖旊摐鞕€ 氚旍澊韸?雼渼搿?臧欖姷雼堧嫟.
+npm notice 
+npm notice New major version of npm available! 10.2.5 -> 12.2.3
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v12.2.3>
+npm notice Run `npm install -g npm@12.2.3` to update!
+npm notice 
