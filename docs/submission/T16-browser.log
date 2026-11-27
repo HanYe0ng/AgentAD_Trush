@@ -1,0 +1,85 @@
+[WebServer] (node:27208) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:23392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:25136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:25136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:28628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:22096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:24340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:9224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 14 tests using 1 worker
+
+(node:25660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:25588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Network: e2e (chainId 31337)
+Deployer/admin: 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+AgentAdRegistry deployed at 0x5fbdb2315678afecb367f032d93f642f64180aa3
+  granted ADVERTISER_ROLE 鈫?0x70997970c51812dc3a010c7d01b50e0d17dc79c8
+  granted PUBLISHER_ROLE 鈫?0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc
+  granted VERIFIER_ROLE 鈫?0x90f79bf6eb2c4f870365e785982e1f101e93b906
+Saved deployments/e2e.json
+[WebServer] (node:27708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:9224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 
+[WebServer] -----
+[WebServer] FATAL: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\31535\AppData\Local\Packages\openai.codex_2p2nqsd0c76g0\AC\#!sandbox.{50004f64-2788-4693-b11e-333e4ba5ba38}\Temp\next-panic-37a02ca9316d82b75a0f929253b4402f.log.
+[WebServer] 
+[WebServer] To help make Turbopack better, report this error by clicking here: https://bugs.nextjs.org/search?category=turbopack-error-report&title=Turbopack%20Error%3A%20failed%20to%20create%20junction%20point%20at%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5C.next-r3final%5C%5Cdev%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient-2c3a283f134fdcb6%22%20pointing%20to%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient%22&body=Turbopack%20version%3A%20%6054b876b6%60%0ANext.js%20version%3A%20%600.0.0%60%0A%0AError%20message%3A%0A%60%60%60%0Afailed%20to%20create%20junction%20point%20at%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5C.next-r3final%5C%5Cdev%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient-2c3a283f134fdcb6%22%20pointing%20to%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient%22%0A%0ACaused%20by%3A%0A-%20creation%20of%20a%20new%20symbolic%20link%20or%20junction%20point%20failed%3A%20%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E3%80%82%20%28os%20error%205%29%0A-%20%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E3%80%82%20%28os%20error%205%29%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace
+[WebServer] -----
+[WebServer] 
+[WebServer] 
+[WebServer] -----
+[WebServer] FATAL: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\31535\AppData\Local\Packages\openai.codex_2p2nqsd0c76g0\AC\#!sandbox.{50004f64-2788-4693-b11e-333e4ba5ba38}\Temp\next-panic-37a02ca9316d82b75a0f929253b4402f.log.
+[WebServer] 
+[WebServer] To help make Turbopack better, report this error by clicking here: https://bugs.nextjs.org/search?category=turbopack-error-report&title=Turbopack%20Error%3A%20failed%20to%20create%20junction%20point%20at%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5C.next-r3final%5C%5Cdev%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient-2c3a283f134fdcb6%22%20pointing%20to%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient%22&body=Turbopack%20version%3A%20%6054b876b6%60%0ANext.js%20version%3A%20%600.0.0%60%0A%0AError%20message%3A%0A%60%60%60%0Afailed%20to%20create%20junction%20point%20at%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5C.next-r3final%5C%5Cdev%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient-2c3a283f134fdcb6%22%20pointing%20to%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient%22%0A%0ACaused%20by%3A%0A-%20creation%20of%20a%20new%20symbolic%20link%20or%20junction%20point%20failed%3A%20%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E3%80%82%20%28os%20error%205%29%0A-%20%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E3%80%82%20%28os%20error%205%29%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace
+[WebServer] -----
+[WebServer] 
+[WebServer] 
+[WebServer] -----
+[WebServer] FATAL[WebServer] : An unexpected Turbopack error occurred. A panic log has been written to C:\Users\31535\AppData\Local\Packages\openai.codex_2p2nqsd0c76g0\AC\#!sandbox.{50004f64-2788-4693-b11e-333e4ba5ba38}\Temp\next-panic-37a02ca9316d82b75a0f929253b4402f.log.
+[WebServer] 
+[WebServer] To help make Turbopack better, report this error by clicking here: https://bugs.nextjs.org/search?category=turbopack-error-report&title=Turbopack%20Error%3A%20failed%20to%20create%20junction%20point%20at%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5C.next-r3final%5C%5Cdev%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient-2c3a283f134fdcb6%22%20pointing%20to%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient%22&body=Turbopack%20version%3A%20%6054b876b6%60%0ANext.js%20version%3A%20%600.0.0%60%0A%0AError%20message%3A%0A%60%60%60%0Afailed%20to%20create%20junction%20point%20at%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5C.next-r3final%5C%5Cdev%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient-2c3a283f134fdcb6%22%20pointing%20to%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient%22%0A%0ACaused%20by%3A%0A-%20creation%20of%20a%20new%20symbolic%20link%20or%20junction%20point%20failed%3A%20%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E3%80%82%20%28os%20error%205%29%0A-%20%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E3%80%82%20%28os%20error%205%29%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace
+[WebServer] -----
+[WebServer] 
+[WebServer] 
+[WebServer] -----
+[WebServer] FATAL: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\31535\AppData\Local\Packages\openai.codex_2p2nqsd0c76g0\AC\#!sandbox.{50004f64-2788-4693-b11e-333e4ba5ba38}\Temp\next-panic-37a02ca9316d82b75a0f929253b4402f.log.
+[WebServer] 
+[WebServer] To help make Turbopack better, report this error by clicking here: https://bugs.nextjs.org/search?category=turbopack-error-report&title=Turbopack%20Error%3A%20failed%20to%20create%20junction%20point%20at%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5C.next-r3final%5C%5Cdev%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient-2c3a283f134fdcb6%22%20pointing%20to%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient%22&body=Turbopack%20version%3A%20%6054b876b6%60%0ANext.js%20version%3A%20%600.0.0%60%0A%0AError%20message%3A%0A%60%60%60%0Afailed%20to%20create%20junction%20point%20at%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5C.next-r3final%5C%5Cdev%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient-2c3a283f134fdcb6%22%20pointing%20to%20%22%5C%5C%5C%5C%3F%5C%5CE%3A%5C%5CDesktop%5C%5C%E5%A4%A7%E5%AD%A6%5C%5C%E5%A4%A7%E5%9B%9B%E4%B8%8B%5C%5Cblockchain%5C%5C.codex-build%5C%5Cround23%5C%5Cnode_modules%5C%5C%40prisma%5C%5Cclient%22%0A%0ACaused%20by%3A%0A-%20creation%20of%20a%20new%20symbolic%20link%20or%20junction%20point%20failed%3A%20%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E3%80%82%20%28os%20error%205%29%0A-%20%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E3%80%82%20%28os%20error%205%29%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace
+[WebServer] -----
+[WebServer] 
+  ok  1 [setup] 鈥?tests\e2e\global.setup.ts:32:1 鈥?deploy AgentAdRegistry to e2e chain (34.6s)
+(node:31736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   2 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:31:1 鈥?甏戧碃欤? 甏戧碃 靸來拡鞚?霌彪頃橁碃 瓿勳暯鞚?敫旊觳挫澑鞐?鞝滌晥頃滊嫟 (3ms)
+  -   3 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:38:1 鈥?甏戧碃 毵れ泊: 臧欖潃 臁瓣贝 頃挫嫓搿?瓿勳暯鞚?靾橂澖頃滊嫟
+  -   4 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:44:1 鈥?靻岆箘鞛?路 鞝曥儊: 甏戧碃 旃措摐臧€ 頇旊┐鞐?響滌嫓霅橁碃, 靻岆箘鞛愳棎瓴?雮措秬 ID電?氤挫澊歆€ 鞎婋姅雼?  -   5 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:55:1 鈥?靻岆箘鞛?路 鞓堨偘 齑堦臣: 甏戧碃毳?氚涭晿歆€毵?AI臧€ 於旍矞頃橃 鞎婋姅雼?  -   6 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:62:1 鈥?靻岆箘鞛?路 頇旊┐ 氙疙憸鞁? 旃措摐毳?攴鸽Μ歆€ 氇豁晿瓿?氙疙憸鞁滊ゼ 氤搓碃頃滊嫟
+  -   7 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:69:1 鈥?靻岆箘鞛?路 旄§爼 鞓る: 旃措摐電?氤挫澊歆€毵?響滌嫓 旮半鞚?雮 鞎婋姅雼?  -   8 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:77:1 鈥?靹滊矂臧€ 氚滉笁頃橃 鞎婌潃 響滌嫓 韱犿伆鞚€ 瓯半秬霅滊嫟
+  -   9 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:97:1 鈥?甏戧碃 毵れ泊: AI臧€ 甏戧碃毳?氚涭潃 須熿垬(4瓯?毳?鞁れ爜鞙茧 氤搓碃頃滊嫟
+  -  10 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:105:1 鈥?瓴€歃濌赴甏€: 4瓯?欷?1瓯?鞚胳爼路1瓯?氤措搿?韺愳爼頃橁碃 敫旊觳挫澑鞐?霌彪頃滊嫟
+  -  11 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:121:1 鈥?甏戧碃欤? 瓴€歃濍悳 鞁れ爜鞚?斓滌 鞀轨澑頃橁碃, 頇堨棎 雲胳稖路鞝曥偘 瓴瓣臣鞕€ 6雼硠 鞕勲臧€ 響滌嫓霅滊嫟
+  -  12 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:135:1 鈥?敫旊觳挫澑 旮半: 5瓯挫潣 鞀轨澑 鞚措牓, 旎姼霝欗姼 甓岉暅 瓯半秬, 鞛槃 頇曥澑
+  -  13 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:146:1 鈥?歃濍箼 氤€臁? 鞝滌稖 頉?臧€歆?響滌嫓 旮半鞚?雱ｌ溂氅?歆€氍?攵堨澕旃橂 氚橂牑霅滊嫟
+  -  14 [e2e] 鈥?tests\e2e\demo-flow.spec.ts:169:1 鈥?鞛炒瓿?頉?甏戧碃欤?鞚挫潣 鞝滉赴: 靷湢臧€ 敫旊觳挫澑鞐?旮半霅滊嫟
